@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description:
     "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
   icons: { icon: '/doppi-icon.png' },
+  openGraph: {
+    images: '/doppi-brand.png',
+  },
 }
 export default function RootLayout({
   children,
