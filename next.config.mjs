@@ -1,17 +1,16 @@
 /** @type {import('next').NextConfig} */
-import type { NextConfig } from 'next'
 import createMdx from '@next/mdx'
 
 const withMDX = createMdx({
   extension: /\.mdx?$/,
 })
 
-const nextConfig:NextConfig = {
+const nextConfig = {
   pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
   images: {
     remotePatterns: [
-      {protocol:"http",hostname:"*"},
-      {protocol: 'https', hostname: '*',},
+      { protocol: 'http', hostname: '*' },
+      { protocol: 'https', hostname: '*' },
     ],
   },
 }
