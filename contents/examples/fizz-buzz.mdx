@@ -1,0 +1,73 @@
+---
+title: "FizzBuzz Masalasi"
+description: "Doppi dasturlash tili yordamida FizzBuzz masalasini yechish"
+date: 11-18-2024
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/FizzBuzz.png"
+---
+
+## FizzBuzz Masalasi
+
+### Masala Tavsifi
+
+FizzBuzz masalasi 1 dan N gacha bo‘lgan sonlar uchun quyidagicha ishlaydi:
+- Agar son 3 ga bo‘linadigan bo‘lsa, "Fizz" ni chiqarish.
+- Agar son 5 ga bo‘linadigan bo‘lsa, "Buzz" ni chiqarish.
+- Agar son 3 va 5 ga ham bo‘linadigan bo‘lsa, "FizzBuzz" ni chiqarish.
+
+Dastur shu qoidalarga muvofiq, 1 dan N gacha bo‘lgan barcha sonlarni chop etishi kerak.
+
+### Doppi Kode
+
+```js
+// FizzBuzz Masalasi
+yarat n := kirit("n:=", "number"), i := 0;
+
+takrorla(i := 1, i <= n, i := i + 1) {
+    agar(i % 3 == 0 && emas(i % 5 == 0)) {
+        chiqar("Fizz:", i);
+    } aks {
+        agar(emas(i % 3 == 0) && i % 5 == 0) {
+            chiqar("Buzz:", i);
+        } aks {
+            agar(i % 3 == 0 && i % 5 == 0) {
+                chiqar("FizzBuzz:", i);
+            };
+        };
+    };
+};
+```
+
+### Dastur Tavsifi
+
+1. **N ni kiritish**: Dastlab, foydalanuvchidan N sonini kiritish so'raladi.
+2. **Takrorlash**: 1 dan N gacha bo'lgan barcha sonlarni tekshirish:
+    - Agar son 3 ga bo‘linadigan bo‘lsa, lekin 5 ga bo‘linmasa, "Fizz" deb chiqariladi.
+    - Agar son 5 ga bo‘linadigan bo‘lsa, lekin 3 ga bo‘linmasa, "Buzz" deb chiqariladi.
+    - Agar son 3 va 5 ga ham bo‘linadigan bo‘lsa, "FizzBuzz" deb chiqariladi.
+3. **Natijani chiqarish**: Har bir shart bo‘yicha natijalar chiqariladi.
+
+### Misollar
+
+- Agar N = 15 bo'lsa:
+```
+Fizz: 3
+Buzz: 5
+Fizz: 6
+Buzz: 10
+FizzBuzz: 15
+```
+
+- Agar N = 7 bo'lsa:
+```
+Fizz: 3
+Buzz: 5
+```
+
+### Xulosa
+
+FizzBuzz masalasi dasturlashdagi eng mashhur masalalardan biridir. Doppi dasturlash tili yordamida uning qisqa va samarali yechimini ko'rdik. Bu masala yordamida bo'linish amallarini va shartlarni qanday ishlatishni tushunish mumkin.

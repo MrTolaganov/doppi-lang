@@ -1,0 +1,77 @@
+---
+title: "Plaindromni Tekshirish"
+description: "Doppi dasturlash tili yordamida biror satrni plaindrom ekanligini tekshirish masalasi"
+date: 11-18-2024
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/palindrome.png"
+---
+
+## Plaindromni Tekshirish
+
+### Kirish
+
+Plaindrom so'zi, boshlanishi va oxiri bir xil bo'lgan satrlarni anglatadi. Masalan, "madam", "racecar" kabi so'zlar plaindrom bo'ladi. Bu masalani Doppi dasturlash tili yordamida qanday hal qilishni ko'rib chiqamiz.
+
+### Masala Tavsifi
+
+Satrning teskari shakli bilan asl shakli bir xil bo'lsa, u plaindrom hisoblanadi. Ushbu masalani Doppi dasturlash tili yordamida yechamiz.
+
+### Doppi Kode
+
+```js
+// Plaindromni Tekshirish
+yarat satr := kirit("satr:", "string");
+
+agar(satr.teskari == satr) {
+    chiqar("bu satr plaindrom");
+} aks {
+    chiqar("bu satr plaindrom emas");
+};
+```
+
+### Dastur Tavsifi
+
+1. **Satrni kiritish**: Dastlab, foydalanuvchidan biror satrni kiritish so'raladi.
+2. **Plaindromni tekshirish**: Kiritilgan satrni va uning teskari shaklini taqqoslaymiz:
+    - Agar satrning teskari shakli uning o'zi bilan teng bo'lsa, demak satr plaindrom.
+3. **Natijani chiqarish**: Dastur foydalanuvchiga natijani chiqaradi:
+    - Agar satr plaindrom bo'lsa, "bu satr plaindrom" deb chiqariladi.
+    - Agar satr plaindrom bo'lmasa, "bu satr plaindrom emas" deb chiqariladi.
+
+### Misol
+
+Agar foydalanuvchi "madam" so'zini kiritgan bo'lsa:
+
+```
+satr = "madam"
+```
+
+Dastur quyidagicha natija beradi:
+
+```
+bu satr plaindrom
+```
+
+Agar foydalanuvchi "hello" so'zini kiritgan bo'lsa:
+
+```
+satr = "hello"
+```
+
+Dastur quyidagicha natija beradi:
+
+```
+bu satr plaindrom emas
+```
+
+### Xulosa
+
+Bu dastur yordamida berilgan satrni plaindrom yoki emasligini aniqlash mumkin. Doppi dasturlash tili yordamida sodda va tushunarli tarzda bu masalani yechdik. Plaindromlarni tekshirish, masalan, so'zlarni yoki jumlalarni tahlil qilishda foydalidir.
+
+---
+
+Maqolada Doppi dasturlash tili yordamida plaindromni qanday tekshirishni ko'rdik. Bu usulni boshqa turdagi ma'lumotlarni tahlil qilishda ham qo'llash mumkin.

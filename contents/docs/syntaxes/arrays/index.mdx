@@ -1,0 +1,160 @@
+---
+title: Arrayni yaratish va uning metodlari
+description: Doppi dasturlash tilida array yaratish, uning elementlari bilan ishlash va arrayning uzunligini aniqlash.
+---
+
+## Arrayni Yaratish va Elementlar Qo'shish
+
+Doppi dasturlash tilida arraylar yaratishda va ularga elementlar qo'shishda quyidagi sintaksis ishlatiladi:
+
+1. **Array yaratish**:  
+   Arrayni yaratishda uning uzunligini ko'rsatish mumkin, masalan, `a[5] := [12, 34, 56];` bu yerda `a` nomli array 5 ta elementli qilib e'lon qilinadi, va bir nechta qiymatlar beriladi.  
+   Qolgan elementlar bo'sh qiymatlar bilan to'ldiriladi.
+
+2. **Arrayning uzunligini olish**:  
+   Arrayning uzunligini `a.uzunlik` orqali olish mumkin. Bu metod arraydagi elementlar sonini qaytaradi.
+
+3. **Arrayga yangi element qo'shish**:  
+   `a[index]` orqali arrayga yangi element qo'shish mumkin. Misol uchun, `a[3] := 78;` orqali `a` arrayining 4-chi elementiga qiymat berish mumkin.
+
+<Note type="warning" title="Eslatma">
+    > **Array e'lon qilinganda element e'lon qilinishi zarur yoki uzunligi oldindan e'lon qilinishi zarur;**
+</Note>
+### Arrayga Elementlar Qo'shish va Uzunlikni O'zgartirish
+
+Array yaratib bo'lgach, uning uzunligini o'zgartirish yoki yangi elementlar qo'shish mumkin. Misol uchun:
+
+```js
+yarat a[5] := [12, 34, 56];  // 5 ta elementli array yaratildi, 3 ta qiymat berildi, qolganlari bo'sh
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, <bo'sh />, <bo'sh />]
+
+chiqar(a.uzunlik);  // Arrayning uzunligini chiqaradi, natija: 5
+
+a[3] := 78;  // Arrayga yangi element qo'shildi
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, 78, <bo'sh />]
+
+a.uzunlikAlmash(4);  // Array uzunligini 4 ga o'zgartirish
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, 78]
+```
+
+### Arrayning Elementlarini Olish va Uzunlikni O'zgartirish
+
+Arrayda mavjud elementlarni olish yoki uning uzunligini o'zgartirish uchun quyidagi metodlardan foydalanishingiz mumkin:
+
+```js
+chiqar(a.ol(2));  // 2-chi indeksdagi elementni chiqaradi, natija: 56
+
+a.uzunlikAlmash(3);  // Array uzunligini 3 ga o'zgartirish
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56]
+
+a.oxiridanOlibTashla();  // Oxirgi elementni olib tashlash
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34]
+```
+
+**Natija:**
+
+```
+[12, 34, 56, <2 ta bo'sh />]
+5
+[12, 34, 56, 78, <bo'sh />]
+[12, 34, 56, 78]
+56
+[12, 34, 56]
+[12, 34]
+```
+### Arrayni ma'lum chegarada kesib olish
+Array elementlarni ma'lum chegarada kesib olish uchun quyidagi usuldan foydalanamiz.
+```js
+yarat a[5] := [12, 34, 56];  // 5 ta elementli array yaratildi, 3 ta qiymat berildi, qolganlari bo'sh
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, <2 ta bo'sh />]
+chiqar(a[0:3]); //bu arrayning 0 - elementidan 3-elementigacha elementlarni qirqib sizga array qaytaradi.
+```
+```
+[12, 34, 56, <2 ta bo'sh />]
+[12, 34, 56, <1 ta bo'sh />]
+```
+### Izohlar
+
+- **Arrayni yaratish**: `a[5] := [12, 34, 56];` arrayni yaratishda 5 elementli bo'ladi. 3 ta qiymat berilgan va qolgan 2 ta element bo'sh qoldirilgan.
+- **Uzunlikni olish**: `a.uzunlik` metodini chaqirganda arrayning uzunligi qaytadi. Dastlab, array 5 ta elementli qilib yaratilgan.
+- **Yangi element qo'shish**: `a[3] := 78;` orqali arrayga yangi element qo'shildi. Bu element 4-chi indexga qo'shildi.
+- **Uzunlikni o'zgartirish**: `a.uzunlikAlmash(4);` metodi yordamida array uzunligini 4 ga o'zgartirdik va oxirgi bo'sh qiymat olib tashlandi.
+- **Element olish va o'chirish**: `a.ol(2)` orqali 2-chi indeksdagi elementni olish va `a.oxiridanOlibTashla()` yordamida oxirgi elementni olib tashlash mumkin.
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="doppi">
+    ```js
+    // Arrayni yaratish va element qo'shish
+    yarat a[5] := [12, 34, 56];  // 5 ta elementli array yaratildi, 3 ta qiymat berildi, qolganlari bo'sh
+    chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, <bo'sh />, <bo'sh />]
+
+    // Arrayning uzunligini olish
+    chiqar(a.uzunlik);  // Arrayning uzunligini chiqaradi, natija: 5
+
+    // Yangi element qo'shish
+    a[3] := 78;  // Arrayga yangi element qo'shildi
+    chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, 78, <bo'sh />]
+
+    // Uzunlikni o'zgartirish
+    a.uzunlikAlmash(4);  // Array uzunligini 4 ga o'zgartirish
+    chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, 78]
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    // Arrayni yaratish va element qo'shish
+    int[] a = {12, 34, 56};  // Array yaratish
+    System.out.println(Arrays.toString(a));  // Natija: [12, 34, 56]
+
+    // Arrayning uzunligini olish
+    System.out.println(a.length);  // Natija: 3
+
+    // Yangi element qo'shish (bu Java-da yangi array yaratishni talab qiladi)
+    a = Arrays.copyOf(a, a.length + 1);
+    a[3] = 78;  // Yangi element qo'shish
+    System.out.println(Arrays.toString(a));  // Natija: [12, 34, 56, 78]
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    // Arrayni yaratish va element qo'shish
+    let a: number[] = [12, 34, 56];  // Array yaratish
+    console.log(a);  // Natija: [12, 34, 56]
+
+    // Arrayning uzunligini olish
+    console.log(a.length);  // Natija: 3
+
+    // Yangi element qo'shish
+    a.push(78);  // Yangi element qo'shish
+    console.log(a);  // Natija: [12, 34, 56, 78]
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Arrayni yaratish va element qo'shish
+    a = [12, 34, 56]  # Array yaratish
+    print(a)  # Natija: [12, 34, 56]
+
+    # Arrayning uzunligini olish
+    print(len(a))  # Natija: 3
+
+    # Yangi element qo'shish
+    a.append(78)  # Yangi element qo'shish
+    print(a)  # Natija: [12, 34, 56, 78]
+    ```
+  </TabsContent>
+</Tabs>
+
+<Note type="success">
+    Hali yana tayyor funksiyalar e'lon qilinadi, kutganigiz uchun rahmat.
+</Note>

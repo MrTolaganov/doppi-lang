@@ -1,0 +1,155 @@
+---
+title: Takrorlanish (Loops)
+description: Doppi dasturlash tilida takrorlanish operatorlari haqida to'liq qo'llanma.
+---
+
+## Takrorlanish Operatorlari
+
+Doppi dasturlash tilida ikki xil takrorlanish operatori mavjud:
+
+1. **Takrorla (`for`)**: Belgilangan iteratsiyalarni bajaradi.
+2. **Toki (`while`)**: Belgilangan shart bajarilguncha davom etadi.
+
+---
+
+### `Takrorla` (For Loop)
+
+`Takrorla` operatori quyidagi tuzilishda ishlaydi:
+
+```js
+takrorla(boshlash, shart, o'sish) {
+    // Amallar
+};
+```
+
+**Misol**:  
+O'n ikki martagacha raqamlarni chop etish:
+
+```js
+yarat i := 0;
+
+takrorla(i := 0, i < 12, i++) {
+    chiqar("i:", i);
+};
+```
+
+**Izoh**:
+- `i := 0`: Takrorlanishni boshlash qiymati.
+- `i < 12`: Takrorlanish tugashi sharti. Shart to'g'ri bo'lsa, sikl davom etadi.
+- `i++`: Har iteratsiyada `i` qiymatini 1 ga oshirish.
+- `chiqar("i:", i);`: Har safar `i` qiymatini ekranga chop etadi.
+
+---
+
+### `Toki` (While Loop)
+
+`Toki` operatori ma'lum bir shart bajarilguncha ishlaydi:
+
+```js
+toki (shart) {
+    // Amallar
+};
+```
+
+**Misol**:  
+O'n ikki martagacha raqamlarni chop etish:
+
+```js
+yarat i := 0;
+
+toki (i < 12) {
+    chiqar("i:", i);
+    i := i + 1; // `i` ni oshirish
+};
+```
+
+**Izoh**:
+- `i := 0`: Boshlang'ich qiymat.
+- `toki (i < 12)`: `i < 12` sharti bajarilgunga qadar takrorlanadi.
+- `i := i + 1`: Har iteratsiyada `i` qiymatini oshiradi.
+- `chiqar("i:", i);`: Har iteratsiyada `i` qiymatini ekranga chiqaradi.
+
+---
+
+## Boshqa Dasturlash Tillarida Taqqoslash
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="doppi">
+    ```js
+    // Takrorla (For)
+    yarat i := 0;
+
+    takrorla(i := 0, i < 12, i++) {
+        chiqar("i:", i);
+    };
+
+    // Toki (While)
+    yarat j := 0;
+
+    toki (j < 12) {
+        chiqar("j:", j);
+        j := j + 1;
+    };
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    // For Loop
+    for (int i = 0; i < 12; i++) {
+        System.out.println("i: " + i);
+    }
+
+    // While Loop
+    int j = 0;
+    while (j < 12) {
+        System.out.println("j: " + j);
+        j++;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    // For Loop
+    for (let i = 0; i < 12; i++) {
+        console.log("i:", i);
+    }
+
+    // While Loop
+    let j = 0;
+    while (j < 12) {
+        console.log("j:", j);
+        j++;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # For Loop
+    for i in range(12):
+        print("i:", i)
+
+    # While Loop
+    j = 0
+    while j < 12:
+        print("j:", j)
+        j += 1
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Xulosa
+
+Doppi dasturlash tilida takrorlanish operatorlari oddiy va o'qish uchun qulay tuzilishga ega.  
+`Takrorla` operatori aniq iteratsiyalar uchun, `Toki` operatori esa shart asosida siklni boshqarish uchun ishlatiladi.

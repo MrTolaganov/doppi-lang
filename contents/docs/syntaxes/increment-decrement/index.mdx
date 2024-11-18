@@ -1,0 +1,175 @@
+---
+title: O'sish va Kamaytirish
+description: Takrorlash operatorlarida o'zgaruvchilarni oshirish va kamaytirish uchun ishlatiladigan sintaksis va ularning ishlash tartibi.
+---
+
+## Takrorlashda O'zgaruvchilarni O'sish va Kamaytirish
+
+Doppi dasturlash tilida o'zgaruvchilarni oshirish va kamaytirish uchun quyidagi usullar mavjud:
+
+### O'sish (Increment)
+O'zgaruvchini oshirish uchun ikki usuldan foydalanish mumkin:
+
+- **i := i + 1;**: O'zgaruvchini birga oshirish.
+- **i := i - 1;**: O'zgaruvchini birga kamaytirish.
+- **i++;**: Bu sintaksis i ni birga oshiradi (i := i + 1;).
+- **i++3**: Bu sintaksis i ning qiymatini 3 ga oshiradi (i := i + 3).
+- **i++a**: Bu sintaksis i ni a qiymatiga oshiradi (i := i + a).
+- **i--**: Bu sintaksis i ni birga kamaytiradi (i := i - 1).
+- **i--a**: Bu sintaksis i ni a qiymatiga kamaytiradi (i := i - a).
+   
+Ikkinchisi qisqaroq yozilishi bo'lib, bir xil natijani beradi.
+
+**Misol:**
+
+```js
+yarat i := 1;
+i := i + 1;  // i ning qiymatini 1 ga oshiradi
+chiqar(i);  // i: 2
+
+yarat j := 0;
+j++;  // j ning qiymatini 1 ga oshiradi
+chiqar(j);  // j: 1
+```
+
+### Ko'proq O'sish
+Agar siz o'zgaruvchining qiymatini bir nechta birliklarga oshirmoqchi bo'lsangiz, quyidagi sintaksisni ishlatishingiz mumkin:
+
+1. **`i++a`** - Bu sintaksis `i := i + a;` ga teng bo'ladi.
+
+**Misol:**
+
+```js
+yarat i := 1;
+i++3;  // i ning qiymatini 3 ga oshiradi
+chiqar(i);  // i: 4
+```
+
+**Izoh:**  
+Bu sintaksis o'zgaruvchini `a` miqdoriga oshiradi. Ya'ni, `i++3` deganda `i := i + 3;` bo'ladi.
+
+---
+
+### Kamaytirish (Decrement)
+O'zgaruvchini kamaytirish uchun quyidagi usullar ishlatiladi:
+
+1. **`i := i - 1;`**  
+2. **`i--;`**  
+   
+Ikkinchisi qisqaroq bo'lib, bir xil natijani beradi.
+
+**Misol:**
+
+```js
+yarat i := 5;
+i := i - 1;  // i ning qiymatini 1 ga kamaytiradi
+chiqar(i);  // i: 4
+
+yarat j := 3;
+j--;  // j ning qiymatini 1 ga kamaytiradi
+chiqar(j);  // j: 2
+```
+
+### Ko'proq Kamaytirish
+Agar o'zgaruvchini bir nechta birliklarga kamaytirmoqchi bo'lsangiz, quyidagi sintaksisni ishlatishingiz mumkin:
+
+1. **`i--a`** - Bu sintaksis `i := i - a;` ga teng bo'ladi.
+
+**Misol:**
+
+```js
+yarat i := 5;
+i--3;  // i ning qiymatini 3 ga kamaytiradi
+chiqar(i);  // i: 2
+```
+
+**Izoh:**  
+Bu sintaksis o'zgaruvchini `a` miqdoriga kamaytiradi. Ya'ni, `i--3` deganda `i := i - 3;` bo'ladi.
+
+---
+
+## Misol
+
+```js
+yarat i := 1;
+i++;  // i ning qiymatini 1 ga oshiradi
+yarat n := i++3;  // n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi, shuning uchun n = 4 bo'ladi
+chiqar(i);  // i: 4
+chiqar(n);  // n: 4
+```
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="pascal">Pascal</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+  <TabsContent value="doppi">
+    ```js
+    yarat i := 1;
+    i++;  // i ning qiymatini 1 ga oshiradi
+    yarat n := i++3;  // n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi
+    chiq("i: " + i);  // i: 4
+    chiq("n: " + n);  // n: 4
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int i = 1;
+            i++;  // i ning qiymatini 1 ga oshiradi
+            int n = i + 3;  // n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi
+            System.out.println("i: " + i);  // i: 4
+            System.out.println("n: " + n);  // n: 4
+        }
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    let i: number = 1;
+    i++;  // i ning qiymatini 1 ga oshiradi
+    let n: number = i + 3;  // n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi
+    console.log("i: " + i);  // i: 4
+    console.log("n: " + n);  // n: 4
+    ```
+  </TabsContent>
+
+  <TabsContent value="pascal">
+    ```pascal
+    program Main;
+    var
+        i, n: Integer;
+    begin
+        i := 1;
+        i := i + 1;  // i ning qiymatini 1 ga oshiradi
+        n := i + 3;  // n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi
+        writeln('i: ', i);  // i: 4
+        writeln('n: ', n);  // n: 4
+    end.
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    i = 1
+    i += 1  # i ning qiymatini 1 ga oshiradi
+    n = i + 3  # n ni i ning qiymatini 3 ga oshirishdan oldin o'rnatadi
+    print(f"i: {i}")  # i: 4
+    print(f"n: {n}")  # n: 4
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+## Xulosa
+
+Doppi dasturlash tilida o'zgaruvchilarni oshirish va kamaytirish uchun sintaksis juda oddiy va qisqa.  
+`i++` va `i--` operatorlari yordamida o'zgaruvchilarni mos ravishda oshirish va kamaytirish mumkin.  
+Bundan tashqari, `i++a` va `i--a` kabi sintaksislar orqali bir nechta birliklarga oshirish yoki kamaytirish mumkin.

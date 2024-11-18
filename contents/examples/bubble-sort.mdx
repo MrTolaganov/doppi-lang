@@ -1,0 +1,74 @@
+---
+title: "Bubble Sort Algoritmasi"
+description: "Doppi dasturlash tili yordamida Bubble Sort algoritmasini amalga oshirish"
+date: "11-18-2024"
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/bubble-sort.png"
+---
+
+## Doppi Dasturlash Tili Yordamida Bubble Sort Algoritmasi
+
+### Kirish
+
+Bubble Sort — bu eng oddiy va asosiy tartiblash algoritmlaridan biri. Bu algoritm ro'yxatdagi elementlarni o'zaro taqqoslab, kerakli holatda almashtirishni amalga oshiradi. Har safar eng katta yoki eng kichik element "kubbik" tarzda ro'yxatning oxiriga yoki boshiga siljiydi. Doppi dasturlash tilida bu algoritmni qanday amalga oshirishni ko'rib chiqamiz.
+
+### Masala Tavsifi
+
+Bubble Sort algoritmasini Doppi dasturlash tilida yozish orqali ro'yxatdagi elementlarni tartiblashni ko'rib chiqamiz. Har safar, qo'shni elementlar solishtiriladi va kerak bo'lsa, joylari almashtiriladi.
+
+### Doppi Kode
+
+```js
+// Bubble Sort algoritmasi
+funksiya bubbleSort(array){
+    yarat i, j, temp;
+    // o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+    takrorla (i:=0, i<array.uzunlik, i:=i+1) {
+        // o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+        takrorla (j:=0, j<array.uzunlik-i-1, j:=j+1) {
+            agar(array[j]>array[j+1]){
+                temp:=array[j];
+                array[j]:=array[j+1];
+                array[j+1]:=temp;
+            };
+        };
+    };
+    array;
+};
+
+yarat massiv:=[12, 4, 6, 9, 45, 7, 0];
+chiqar(bubbleSort(massiv));
+```
+
+### Dastur Tavsifi
+
+1. **Tartiblash funksiyasi (`bubbleSort`)**: Bu funksiyada ro'yxatdagi elementlar o'zaro taqqoslanadi. Har safar qo'shni elementlar solishtiriladi va agar kerak bo'lsa, ularning joyi almashtiriladi.
+2. **Tashqi takrorlash (`i` indeksi)**: Bu takrorlash ro'yxatdagi har bir element uchun ishlatiladi. Har safar `i` indeksining qiymati ortadi va tashqi takrorlash orqali har safar yana bir marta ro'yxatni tekshirib chiqiladi.
+3. **Ichki takrorlash (`j` indeksi)**: Bu takrorlash orqali qo'shni elementlar solishtiriladi va agar kerak bo'lsa, ularning o'rni almashtiriladi. Ichki takrorlashning har bir davrida eng katta element "kubbik" tarzda ro'yxatning oxiriga siljiydi.
+4. **Elementlarni almashtirish**: Agar birinchi element ikkinchi elementdan katta bo'lsa, ularning joylari `temp` yordamida almashtiriladi.
+
+### Misol
+
+Agar bizda quyidagi ro'yxat bo'lsa:
+
+```
+massiv = [12, 4, 6, 9, 45, 7, 0]
+```
+
+Dastur quyidagi natijani chiqaradi:
+
+```
+[0, 4, 6, 7, 9, 12, 45]
+```
+
+### Xulosa
+
+Bubble Sort algoritmasi oddiy, lekin samarali usul bo'lib, ro'yxatdagi elementlarni tartiblash uchun ishlatiladi. Bu dastur orqali biz Doppi dasturlash tilida Bubble Sortni qanday amalga oshirishni ko'rdik. Agar ro'yxatdagi elementlar soni katta bo'lsa, algoritmning samaradorligi past bo'lishi mumkin, lekin kichik ro'yxatlar uchun juda qulay.
+
+---
+
+Maqolada Doppi dasturlash tili yordamida `Bubble Sort` algoritmasi qanday amalga oshirilishini ko'rdik. Bu oddiy, lekin muhim algoritmni tushunish dasturlash asoslarini o'rganishda yordam beradi.

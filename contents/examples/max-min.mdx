@@ -1,0 +1,84 @@
+---
+title: "Eng Katta Va Eng Kichik Sonni Topish"
+description: "Doppi dasturlash tili yordamida berilgan ro‘yxatdan eng katta va eng kichik sonlarni aniqlash"
+date: "11-18-2024"
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/Max and Min.png"
+---
+
+## Doppi Dasturlash Tili Yordamida Eng Katta Va Eng Kichik Sonni Topish
+
+### Kirish
+
+Dasturlashda, ma'lumotlar ustida turli xil amallarni bajarish ko'plab usullarni talab qiladi. Ushbu maqolada, biz Doppi dasturlash tilida eng katta va eng kichik sonlarni topish uchun yozilgan dastur misolini ko'rib chiqamiz. Biz berilgan ro'yxatdan maksimal va minimal sonlarni aniqlaymiz va ular joylashgan indekslarni ham chiqaramiz.
+
+### Masala Tavsifi
+
+Berilgan ro'yxatdagi eng katta va eng kichik sonlarni aniqlang. Qo'shimcha qiyinchilik sifatida, bu sonlarning indekslarini ham aniqlang.
+
+### Doppi Code
+
+```js
+// 3. Eng Katta Va Eng Kichik Sonni Topish
+// Tavsifi: Berilgan ro‘yxatdan eng katta va eng kichik sonlarni aniqlang.
+// Qo‘shimcha Qiyinchilik: Eng katta va eng kichik qiymatlarning indekslarini ham qaytaring.
+
+yarat n:=kirit("nechta element:","number");
+yarat royxat[n], i:=0;
+// o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+takrorla (i:=0, i<n, i:=i+1) {
+    royxat[i]:=tasodif(50);
+};
+chiqar(royxat);
+
+yarat max, min, indexMax, indexMin;
+max:=royxat[0];
+min:=royxat[0];
+// o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+takrorla (i:=0, i<n, i:=i+1) {
+    agar(royxat[i]>=max){
+        max:=royxat[i];
+        indexMax:=i;
+    } aks {
+        agar(royxat[i]<min){
+            min:=royxat[i];
+            indexMin:=i;
+        };
+    };
+};
+chiqar("max:", indexMax, "-indexda ", max, "\nmin:", indexMin, "-indexda ", min);
+```
+
+### Dastur Tavsifi
+
+1. **Foydalanuvchi Kiritishi**: Dastur foydalanuvchidan ro'yxatdagi elementlar sonini (`n`) kiritishni so'raydi.
+2. **Tasodifiy Ro'yxat Yaratish**: `n` ta tasodifiy son (0 dan 50 gacha) yaratilib, `royxat` nomli ro'yxatga joylanadi.
+3. **Eng Katta Va Eng Kichik Sonlarni Aniqlash**: Dastur ro'yxatdagi eng katta va eng kichik sonlarni aniqlaydi. Har bir son bilan solishtirib, kerakli qiymatlar va ularning indekslari saqlanadi.
+4. **Natija**: Dastur oxirida eng katta va eng kichik sonlar va ularning indekslari chiqariladi.
+
+### Misol
+
+Agar foydalanuvchi `n = 7` deb kiritgan bo'lsa, va tasodifiy ro'yxatdagi sonlar quyidagicha bo'lsa:
+
+```
+[13, 7, 19, 3, 8, 24, 11]
+```
+
+Dastur quyidagi natijani chiqaradi:
+
+```
+max: 24 - indexda 5
+min: 3 - indexda 3
+```
+
+### Xulosa
+
+Bu dastur yordamida, biz Doppi dasturlash tili orqali eng katta va eng kichik sonlarni topish va ularning indekslarini aniqlashni o'rgandik. Bu turdagi masalalar dasturlashni o'rganishda foydali bo'lib, ma'lumotlar bilan ishlash ko'nikmalarini oshiradi.
+
+---
+
+Maqolada Doppi dasturlash tili yordamida berilgan ro'yxatdan eng katta va eng kichik sonlarni aniqlash misolini keltirdik. Bu kabi amallarni bajarish dasturchilarga ma'lumotlar strukturalari va algoritmlari bo'yicha kuchli asoslar yaratadi.

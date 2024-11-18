@@ -1,0 +1,162 @@
+---
+title: Kiritish va Chiqarish 
+description: Kiritish hamda Chiqarish uchun ishlatiladigan kutubxonalar va funksiyalar haqida qo'llanma.
+---
+
+### Kiritish va Chiqarish
+
+Doppi dasturlash tilida foydalanuvchi bilan muloqot qilish uchun **`chiqar(...)`** va **`kirit(...)`** funksiyalari ishlatiladi. Quyida ularning ishlatilishi haqida batafsil ma'lumot beriladi.
+
+---
+
+### Chiqarish
+
+**`chiqar(...)`** funksiyasi orqali natijalarni yoki xabarlarni ekranga chiqarish mumkin.  
+Masalan:
+
+```js
+chiqar("Salom, Dunyo!");
+```
+
+Yuqoridagi kod natijasi quyidagicha bo'ladi:  
+**Salom, Dunyo!**
+
+**Bir nechta parametrlar bilan chiqarish:**  
+```js
+chiqar("Natija:", 42);
+```
+Natija: **Natija: 42**
+
+---
+
+### Kiritish
+
+**`kirit(...)`** funksiyasi foydalanuvchidan ma'lumot olish uchun ishlatiladi. Foydalanuvchi tomonidan kiritilgan qiymatni **`yarat`** bilan o'zgaruvchiga saqlash mumkin. 
+
+**Sintaksis:**  
+```js
+yarat o'zgaruvchi := kirit("Xabar", "tur");
+```
+
+#### Parametrlar:
+- **`"Xabar"`**: Foydalanuvchiga ko'rsatiladigan savol yoki xabar.
+- **`"tur"`**: Kiritish turini aniqlaydi. Quyidagi turlar mavjud:
+  - `"string"` – Matn kiritish uchun.
+  - `"number"` – Raqam kiritish uchun.
+  - `"bool"` – Ha/Yo'q (true/false) kiritish uchun.
+
+---
+
+#### Misollar:
+
+1. **Oddiy raqam kiritish:**
+    ```js
+    yarat a := kirit("a=", "number");
+    chiqar("Kiritilgan qiymat:", a);
+    ```
+
+    **Natija:**  
+    Foydalanuvchi `a=` xabarini ko'radi va raqam kiritadi, so'ng natija chiqariladi.
+
+2. **Matn kiritish:**
+    ```js
+    yarat ism := kirit("Ismingizni kiriting:", "string");
+    chiqar("Salom,", ism, "!");
+    ```
+
+    **Natija:**  
+    Foydalanuvchi o'z ismini kiritadi, va quyidagicha natija olinadi:  
+    **Salom, Hayotjon!**
+
+3. **Boolean kiritish:**
+    ```js
+    yarat javob := kirit("Shartni tasdiqlaysizmi? (true/false):", "bool");
+    chiqar("Sizning javobingiz:", javob);
+    ```
+
+    **Natija:**  
+    Foydalanuvchi `true` yoki `false` kiritadi, va natija shunga mos ravishda ko'rinadi.
+
+---
+
+### Kiritish va Chiqarish Misollarini Taqqoslash
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="csharp">C#</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="doppi">
+    ```js
+    // Doppi misol
+    yarat ism := kirit("Ismingizni kiriting:", "string");
+    chiqar("Salom,", ism, "!");
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    // Java misol
+    import java.util.Scanner;
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ismingizni kiriting: ");
+            String ism = scanner.nextLine();
+            System.out.println("Salom, " + ism + "!");
+        }
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    // TypeScript misol
+    import * as readline from "readline";
+
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    rl.question("Ismingizni kiriting: ", (ism) => {
+        console.log(`Salom, ${ism}!`);
+        rl.close();
+    });
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Python misol
+    ism = input("Ismingizni kiriting: ")
+    print("Salom,", ism, "!")
+    ```
+  </TabsContent>
+
+  <TabsContent value="csharp">
+    ```csharp
+    // C# misol
+    using System;
+
+    class Program {
+        static void Main() {
+            Console.Write("Ismingizni kiriting: ");
+            string ism = Console.ReadLine();
+            Console.WriteLine($"Salom, {ism}!");
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Xulosa
+
+**`chiqar(...)`** va **`kirit(...)`** yordamida Doppi tilida foydalanuvchi bilan oddiy va samarali muloqot qilishingiz mumkin. Boshqa dasturlash tillarida ham kiritish va chiqarish usullari mavjud bo'lib, ular Doppi tiliga o'xshash tarzda ishlaydi.

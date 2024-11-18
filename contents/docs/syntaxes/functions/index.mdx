@@ -1,0 +1,122 @@
+---
+title: Funksiya Yaratish
+description: Doppi tilida funksiya yaratish va ishlatish bo'yicha qo'llanma.
+---
+
+### Doppi Language Tabs Example
+
+Quyida `.doppi` tilida funksiya yaratish va uni ishlatish ko'rsatilgan. Kodda `a(b)` funksiyasi parametr sifatida `b` ni oladi va `chiqar(b)` bilan uning qiymatini chiqaradi. 
+
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="pascal">Pascal</TabsTrigger>
+    <TabsTrigger value="csharp">C#</TabsTrigger>
+  </TabsList>
+  <TabsContent value="doppi">
+    ```js
+    // Funksiya yaratish va chaqirish
+    funksiya a(b) {
+        chiqar(b);
+    }
+
+    a(2);  // 2 ni chiqaradi
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    // HelloWorld.java
+    public class HelloWorld {
+        // Funksiya deklaratsiyasi
+        public static void a(int b) {
+            System.out.println(b);
+        }
+
+        public static void main(String[] args) {
+            a(2);  // 2 ni chiqaradi
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="typescript">
+    ```typescript
+    // helloWorld.ts
+    // Funksiya yaratish va chaqirish
+    function a(b: number): void {
+        console.log(b);
+    }
+
+    a(2);  // 2 ni chiqaradi
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    # Funksiya yaratish va chaqirish
+    def a(b):
+        print(b)
+
+    a(2)  # 2 ni chiqaradi
+    ```
+  </TabsContent>
+  <TabsContent value="pascal">
+    ```pascal
+    // Funksiya yaratish va chaqirish
+    procedure a(b: Integer);
+    begin
+        WriteLn(b);
+    end;
+
+    begin
+        a(2);  // 2 ni chiqaradi
+    end.
+    ```
+  </TabsContent>
+  <TabsContent value="csharp">
+    ```csharp
+    // Funksiya yaratish va chaqirish
+    using System;
+
+    class Program {
+        static void a(int b) {
+            Console.WriteLine(b);
+        }
+
+        static void Main() {
+            a(2);  // 2 ni chiqaradi
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Doppi Language Notes
+
+<Note title="Function Declaration">
+**Funksiya:**  
+`.doppi` tilida funksiyalar `funksiya` kalit so'zi bilan e'lon qilinadi. Masalan:
+```js
+funksiya funksiyaNomi(parametr) {
+    // Funksiya ichidagi kod
+}
+```
+
+**Funksiya chaqiruvlari:**  
+Funksiyani chaqirish uchun uning nomini yozib, kerakli parametrlarni uzatish kerak:
+```js
+funksiyaNomi(parametr);
+```
+
+**Taqqoslash:**  
+- `.doppi`da `funksiya` kalit so'zi orqali funksiyalar e'lon qilinadi, bu Java, TypeScript, Python kabi tillarda ham mavjud.
+</Note>
+
+---
+
+
+Endi, foydalanuvchilar `.doppi` tilini boshqa tillar bilan taqqoslab, uning sintaksisidagi o'zgarishlarni oson tushunishlari mumkin.

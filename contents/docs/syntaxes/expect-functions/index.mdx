@@ -1,0 +1,88 @@
+---
+title: O'zgarmas funksiyalar hamda Qiymatlar
+description: Bu hujjatda o'zgarmas funksiyalar va qiymatlar haqida ma'lumot beriladi.
+---
+
+## O'zgarmas Qiymatlar
+
+Quyida dasturda mavjud bo'lgan ba'zi o'zgarmas qiymatlar ro'yxati keltirilgan:
+
+- **pi**: Matematik konstant, π ning qiymati (3.14159...).
+- **rost**: Boolean tipidagi `true` qiymati.
+- **yolgon**: Boolean tipidagi `false` qiymati.
+- **qiymatsiz**: `null` qiymatni bildiradi.
+
+## O'zgarmas Funksiyalar
+
+Dasturda ishlatiladigan ba'zi foydali funksiyalar va ularning ma'nolari:
+
+### **yaxlitla**
+- **Tavsif**: Berilgan sonning pastki butun qismiga yaxlitlaydi.  
+- **Misol**:  
+  ```javascript
+  yaxlitla(3.14) // Natija: 3
+  yaxlitla(9.99) // Natija: 9
+  ```
+
+### **tasodif**
+- **Tavsif**: Tasodifiy sonni qaytaradi.
+- **Ishlatish shakllari**:
+  1. `tasodif(10)` — 0 dan 10 gacha tasodifiy son.
+  2. `tasodif(12, 40)` — 12 dan 40 gacha tasodifiy son.
+- **Misol**:
+  ```javascript
+  tasodif(10) // Natija: 0 yoki 10 orasidagi tasodifiy son
+  tasodif(12, 40) // Natija: 12 va 40 orasidagi tasodifiy son
+  ```
+
+### **emas**
+- **Tavsif**: Boolean qiymatni teskarisiga o'zgartiradi (`true` → `false`, `false` → `true`).
+- **Misol**:  
+  ```javascript
+  emas(true) // Natija: false
+  emas(false) // Natija: true
+  ```
+
+### **chiqar**
+- **Tavsif**: Konsolga berilgan qiymatni chiqaradi.
+- **Misol**:  
+  ```javascript
+  chiqar("Salom!") // Konsolda: Salom!
+  ```
+
+### **kirit**
+- **Tavsif**: Foydalanuvchidan ma'lumot kiritishni so'raydi.
+- **Misol**:  
+  ```javascript
+  kirit("Ismingizni kiriting:") // Konsolda foydalanuvchi kiritgan qiymat qaytariladi
+  ```
+
+### **vaqt**
+- **Tavsif**: Joriy vaqtni qaytaradi.
+- **Misol**:  
+  ```javascript
+  vaqt() // Natija: Joriy vaqt
+  ```
+
+### **massiv_uzunligi**
+- **Tavsif**: Berilgan massivning uzunligini qaytaradi.
+- **Misol**:  
+  ```javascript
+  massiv_uzunligi([1, 2, 3, 4]) // Natija: 4
+  ```
+
+### **satr_uzunligi**
+- **Tavsif**: Berilgan satrning uzunligini qaytaradi.
+- **Misol**:  
+  ```javascript
+  satr_uzunligi("Salom!") // Natija: 6
+  ```
+
+### **tur**
+- **Tavsif**: Qiymatning turini aniqlaydi.
+- **Misol**:  
+  ```javascript
+  tur(123) // Natija: "number"
+  tur("Salom!") // Natija: "string"
+  ```
+  

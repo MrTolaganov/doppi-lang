@@ -1,0 +1,203 @@
+---
+title: Shartli Operatorlar 
+description: Doppi dasturlash tilida shartli operatorlar bilan ishlash uchun qo'llanma.
+---
+
+### Doppi Tilda Shartli Operatorlar
+
+Doppi dasturlash tilida shartli operatorlar yordamida turli holatlarni boshqarish mumkin. Bu tilda faqat `agar` va `aks` mavjud, `aks agar` ishlatilmaydi. Kod oqimini boshqarishda `agar` qismidagi tugallanmasida `aks` mavjud bo'lsa, oxiriga nuqta-vergul (`;`) qo'yilmaydi, faqat `aks` qismida nuqta-vergul ishlatiladi.
+
+---
+
+## Shartli Operatorlar Sintaksisi
+
+```js
+agar (shart) {
+    // Shart bajarilganda ishlatiladigan kod
+} aks {
+    // Shart bajarilmasa ishlatiladigan kod
+};
+```
+> Agar inkor amalini ishlatmoqchi bo'lsangiz emas() kalit so'zini ishlatamiz. misol uchun **(rost && yolgon || emas(rost && yolgon ))**
+
+**Misol:**
+
+```js
+yarat num := 10;
+
+agar (num == 10) {
+    chiqar("10 ni qaytardi")
+} aks {
+    chiqar("20 ni qaytardi");
+};
+
+// Shartlardan tashqari umumiy holat
+chiqar("30 ni qaytar");
+```
+
+---
+
+### Ichma-ich Shartlar
+
+Doppi tilda ichma-ich joylashgan shartlar bilan murakkab tekshirishlarni amalga oshirish mumkin.
+
+```js
+agar (num > 0) {
+    chiqar("Musbat son");
+    agar (num % 2 == 0) {
+        chiqar("Juft son");
+    } aks {
+        chiqar("Toq son");
+    };
+} aks {
+    chiqar("Manfiy yoki nol");
+};
+```
+
+---
+
+## Kengaytirilgan Misol
+
+Murakkab shartli konstruktsiyani faqat `agar` va `aks` yordamida yaratish mumkin. Quyida baho baholash uchun dastur ko'rsatilgan:
+
+```js
+yarat baho := 85;
+
+agar (baho >= 90) {
+    chiqar("A darajasi");
+} aks {
+    agar (baho >= 80) {
+        chiqar("B darajasi");
+    } aks {
+        chiqar("C darajasi");
+    };
+};
+```
+
+---
+
+### Doppi Tilda Shartlarni Soddalashtirish
+
+Doppi tilida shartlarni ketma-ket yozish orqali murakkabligi kamaytiriladi. Faqat kerakli shartni aniqlang va shunga qarab shartli operatorni ishlating.
+
+---
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="pascal">Pascal</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="csharp">C#</TabsTrigger>
+  </TabsList>
+  <TabsContent value="doppi">
+    ```js
+    yarat num := 10;
+
+    agar (num == 10) {
+        chiqar("10 ni qaytardi")
+    } aks {
+        chiqar("20 ni qaytardi");
+    };
+
+    chiqar("30 ni qaytar");
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int num = 10;
+
+            if (num == 10) {
+                System.out.println("10 ni qaytardi");
+            } else {
+                System.out.println("20 ni qaytardi");
+            }
+
+            System.out.println("30 ni qaytar");
+        }
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    const num: number = 10;
+
+    if (num === 10) {
+        console.log("10 ni qaytardi");
+    } else {
+        console.log("20 ni qaytardi");
+    }
+
+    console.log("30 ni qaytar");
+    ```
+  </TabsContent>
+
+  <TabsContent value="pascal">
+    ```pascal
+    program Main;
+    var
+        num: Integer;
+    begin
+        num := 10;
+
+        if num = 10 then
+            writeln('10 ni qaytardi')
+        else
+            writeln('20 ni qaytardi');
+
+        writeln('30 ni qaytar');
+    end.
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    num = 10
+
+    if num == 10:
+        print("10 ni qaytardi")
+    else:
+        print("20 ni qaytardi")
+
+    print("30 ni qaytar")
+    ```
+  </TabsContent>
+
+  <TabsContent value="csharp">
+    ```csharp
+    using System;
+
+    class Program {
+        static void Main() {
+            int num = 10;
+
+            if (num == 10) {
+                Console.WriteLine("10 ni qaytardi");
+            } else {
+                Console.WriteLine("20 ni qaytardi");
+            }
+
+            Console.WriteLine("30 ni qaytar");
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+---
+
+### Doppi Tilda Shartli Operatorlar
+
+<Note title="Shartli Operatorlar">
+Doppi tildagi asosiy farqlar:
+- `agar` - Shartni ifodalash uchun ishlatiladi.
+- `aks` - Shart bajarilmaganda bajariladigan kodni yozish uchun ishlatiladi.
+- `aks` tugagandan keyin nuqta-vergul (`;`) qo'shiladi.
+</Note>
+
+### Xulosa
+
+Doppi tilda shartli operatorlar sodda va tushunarli tuzilgan. Har qanday murakkab shartni faqat `agar` va `aks` yordamida ifodalash mumkin. Bu dasturlash tili strukturasi ixcham va o'qilishi oson bo'lishiga katta yordam beradi.

@@ -1,0 +1,138 @@
+## Switch-Case (tanla) sintaksisi
+
+Doppi dasturlash tilida `tanla` operatori boshqa tillardagi `switch-case` funksiyasiga o'xshaydi. Bu operator yordamida qiymatni tekshirib, mos kelgan holatda bajarilishi kerak bo'lgan kodni ishga tushirishingiz mumkin.
+
+---
+
+### Doppi Tili Sintaksisi
+
+Doppi tilida `tanla` operatorining asosiy sintaksisi quyidagicha:
+
+```js
+tanla(o'zgaruvchi) {
+    holat qiymat1, qiymat2: {
+        // Kod bloki
+        toxtatish; // Agar keyingi holatlarga o'tishni istamasangiz
+    }
+    holat qiymat3: {
+        // Kod bloki
+    }
+    odatiy: {
+        // Default holat
+    }
+};
+```
+
+#### Misol
+Quyidagi misolda `a` o'zgaruvchisi qiymatiga qarab, turli xil xabarlar chiqadi:
+
+```js
+doim a := 13;
+
+tanla(a) {
+    holat 12, 13: {
+        chiqar("Salom!");
+        toxtatish; // Keyingi holatlarga o'tishni to'xtatadi
+    }
+    holat 14: {
+        chiqar("Xayrli kun!");
+        toxtatish;
+    }
+    odatiy: {
+        chiqar("Malika!");
+    }
+};
+```
+
+**Natija**: `Salom!`
+
+---
+
+### Doppi Tili Xususiyatlari
+1. **Holatlarni birlashtirish**: Bir necha qiymatni vergul yordamida birlashtirish mumkin (`holat 12, 13`).
+2. **Default (odatiy)**: Agar hech bir holat mos kelmasa, `odatiy` bloki ishga tushadi.
+3. **To'xtatish uchun `toxtatish`**: Bir holat bajarilgandan keyin boshqa holatlarni o'rganishni to'xtatadi.
+
+---
+
+## Taqqoslash Boshqa Tillar Bilan
+
+Quyida `tanla` operatorining boshqa tillardagi ekvivalentlari keltirilgan.
+
+---
+
+### C++ tili
+```cpp
+int a = 13;
+
+switch (a) {
+    case 12:
+    case 13:
+        std::cout << "Salom!" << std::endl;
+        break; // Keyingi holatlarga o'tishni to'xtatadi
+    case 14:
+        std::cout << "Xayrli kun!" << std::endl;
+        break;
+    default:
+        std::cout << "Malika!" << std::endl;
+}
+```
+
+**Natija**: `Salom!`
+
+---
+
+### Python tili (`match-case`)
+Python 3.10 va undan yuqori versiyalarda mavjud.
+
+```python
+a = 13
+
+match a:
+    case 12 | 13:  # Bir nechta qiymatni "or" bilan birlashtirish
+        print("Salom!")
+    case 14:
+        print("Xayrli kun!")
+    case _:
+        print("Malika!")  # Default holat
+```
+
+**Natija**: `Salom!`
+
+---
+
+### JavaScript tili
+```javascript
+const a = 13;
+
+switch (a) {
+    case 12:
+    case 13:
+        console.log("Salom!");
+        break; // Keyingi holatlarga o'tishni to'xtatadi
+    case 14:
+        console.log("Xayrli kun!");
+        break;
+    default:
+        console.log("Malika!"); // Default holat
+}
+```
+
+**Natija**: `Salom!`
+
+---
+
+## Taqqoslash Jadvali
+
+| **Tillar**       | **Doppi**                          | **C++**                                    | **Python**                            | **JavaScript**                        |
+|-------------------|------------------------------------|--------------------------------------------|---------------------------------------|---------------------------------------|
+| **Qiymat tekshirish** | `tanla(o'zgaruvchi)`           | `switch (o'zgaruvchi)`                     | `match o'zgaruvchi:`                 | `switch (o'zgaruvchi)`               |
+| **Holat aniqlash** | `holat qiymat1, qiymat2:`         | `case qiymat1:`<br/>`case qiymat2:`         | `case qiymat1 \| qiymat2:`           | `case qiymat1:`<br/>`case qiymat2:`  |
+| **Default bloki**  | `odatiy:`                        | `default:`                                 | `case _:`                             | `default:`                            |
+| **To'xtatish**     | `toxtatish;`                     | `break;`                                   | Yo'q, avtomatik to'xtaydi            | `break;`                              |
+| **Sintaksis yengilligi** | Oddiy va qisqa               | Ko'proq kod talab qiladi                  | Yangi versiyalarda qulay              | O'rtacha darajada qulay               |
+
+---
+
+### Xulosa
+Doppi tilidagi `tanla` operatori oddiy va intuitiv bo'lib, C++ va JavaScript tilidagi `switch-case` sintaksisiga juda yaqin. Bundan tashqari, bir nechta qiymatlarni birlashtirish imkoniyati (masalan, `holat 12, 13:`) va default bloki (`odatiy:`) uning foydalanish osonligini ta'minlaydi.

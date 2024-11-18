@@ -1,0 +1,69 @@
+---
+title: O'rnatish
+description: Dasturni o'rnatish uchun qo'llanma.
+---
+Doppi dasturlash tilini o'rnatish uchun sizda windows operatsion tizimi mavjud bo'lishi lozim
+
+## Dasturni Yuklash
+
+import { DownloadIcon } from "lucide-react"
+
+To get started, you can clone the AriaDocs repository directly from GitHub. 
+<DownloadButton>
+  <>
+    <span>Dasturni Yuklash</span>
+  </>
+</DownloadButton>
+### Dasturni shell code orqali ham yuklab olishingiz mumkun
+```shell 
+  wget -P Downloads/ https://www.mediafire.com/file/ozyqy0f21o67iku/setup-doppi.exe
+```
+<Stepper>
+  <StepperItem title="1-Qadam : Dastur shu ko'rinishda qurilmangizga yuklab olinadi.">
+
+    Dasturni ustidan bosishingiz bilan paketlar qurilmangizga o'tkazilib boshlanadi.
+  <img src="/images/getting-started/installation-1.png"/>
+  </StepperItem>
+
+  <StepperItem title="2-Qadam : Dastur o'rnatilishi uchun buyruq berish">
+    <img src="/images/getting-started/installation-2.png" width={"600px"} className="mx-auto"/>
+    ### 2-qadamda `install` tugmasini bosishingiz kerak.
+  </StepperItem>
+
+  <StepperItem title="3-qadam: paketlar o'rnatilib bo'lguncha kutish zarur.">
+      <img src="/images/getting-started/installation-3.png" width={"600px"} className="mx-auto"/>
+  </StepperItem>
+
+  <StepperItem title="4-Qadam: tizim bilan aloqa">
+    Paket o'rnatilib bo'lgandan so'ng sizdan dastur ruxsat so'raydi tizim bilan bog'lanish uchun.
+    <img src="/images/getting-started/installation-4.webp" width={"600px"} className="mx-auto"/>
+  </StepperItem>
+
+  <StepperItem title="5-Qadam: Tizimga dastur haqida ma'lumotlarni yuklash uchun ruxsat berish">
+    Tizim bila bog'lanish uchun ruxsat berilgandan so'ng, dastur tizimga nima yuklashi haqida so'rovnoma o'tkazadi, quyidagi shklda.
+
+    ```properties
+    Path variable updated successfully for C:\Users\user\...run.
+    Path variable updated successfully for C:\Users\user\...\bin.
+    >
+    Skipping registration of .doppi file extension in HKEY_LOCAL_MACHINE.
+    File extension .doppi is already registered in HKEY_LOCAL_MACHINE.
+    Skipping registration of .doppi file extension in HKEY_CLASSES_ROOT.
+
+    File extension .doppi is already registered in HKEY_CLASSES_ROOT.
+    Do you want to set the default icon for .doppi files in HKEY_LOCAL_MACHINE? (Y/N)
+    > y
+    The operation completed successfully.
+    Registry updated successfully with icon path in HKEY_LOCAL_MACHINE: C:\Users\...\doppi-logo-extension.ico.
+    Do you want to set the default icon for .doppi files in `HKEY_CLASSES_ROOT`? (Y/N)
+    > y
+    The operation completed successfully.
+    ```
+  </StepperItem>
+</Stepper>
+
+## Dastur o'rnatilganini tekshirish
+
+```properties 
+  doppi --yordam
+```

@@ -1,0 +1,108 @@
+---
+title: Doppi uchun ilk extension v0.0.6
+description: Doppi tilining yangi extension versiyasi 0.0.6 haqida batafsil ma'lumot.
+---
+
+# Doppi Extension v0.0.6
+
+Doppi tilining yangi versioni, v0.0.6, bir qator yangi xususiyatlar va yaxshilanishlar bilan taqdim etiladi. Ushbu yangilanish Doppi tilining imkoniyatlarini kengaytiradi va foydalanuvchilarga yanada qulay dasturlash tajribasini taqdim etadi.
+
+## Yangi Xususiyatlar
+
+- **Yangi funksiyalar qo'shildi**: Doppi tili matematik funksiyalarni kengaytirdi, masalan, trigonometrik va giperbolik funksiyalar.
+- **Sintaksis yaxshilanishi**: Endi ba'zi operatorlar yanada intuitiv va oson ishlatiladi.
+- **Kengaytirilgan imkoniyatlar**: Yangi `extension`lar orqali Doppi tili yanada kuchliroq bo'ldi, bu esa ko'plab yangi funktsiyalarni o'z ichiga oladi.
+<img src="/images/getting-started/extension-install-1.png" className="rounded-lg shadow-md"/>
+## Yangilanishlar
+
+### 1. **Matematik Funksiyalar**
+- Endi Doppi tilida matematik hisoblashlarni amalga oshirish uchun bir nechta yangi funksiyalar mavjud:
+  - **`matematik.sinus(x)`**: Sinus funktsiyasi.
+  - **`matematik.cosinus(x)`**: Kosinus funktsiyasi.
+  - **`matematik.ildiz(x)`**: Kvadrat ildiz hisoblash.
+  - **`matematik.daraja(x, y)`**: Sonni darajaga ko'tarish.
+  - **`matematik.max(x, y, ...)`**: Eng katta qiymatni topish.
+  - **`matematik.min(x, y, ...)`**: Eng kichik qiymatni topish.
+<Note>
+  > Bu biroz eski yangilanish bo'lgani sabab matematik funksiyalarni chiqarish uchun `matematik.` deb yozish zarur
+</Note>
+
+### 2. **Sintaksis Yaxshilanishi**
+- Doppi tili uchun ba'zi yangi sintaksis o'zgartirishlar amalga oshirildi, bu esa kodni o'qish va yozish jarayonini ancha soddalashtiradi.
+
+## Foydalanuvchilar uchun yangiliklar
+
+- **Yangi versiya va qo'llab-quvvatlash**: Doppi extensionning yangi versiyasi bilan birga, foydalanuvchilar yangi funksiyalar va xususiyatlardan foydalanish imkoniyatiga ega bo'lishadi. Dasturlash jarayoni yanada qulayroq va samaraliroq bo'ladi.
+- **Yaxshilangan xatoliklarni qayd etish**: Yangi versiyada xatoliklar aniqlanishi va tuzatilishi uchun yaxshilangan mexanizm mavjud.
+
+## Extension uchun qo'llanma
+
+- Doppi tilining barcha yangi funksiyalari va sintaksis imkoniyatlarini to'liq ishlatish uchun rasmiy hujjatlarga murojaat qiling. Doppi'ni o'rnatganingizdan so'ng, funksiyalarni ishlatish uchun o'zingizga mos bo'lgan muhitda sinab ko'ring.
+
+### Yangilanishni o'rnatish
+
+1. Doppi Extension v0.0.6-ni o'rnating.
+2. Yangilangan funksiyalarni va imkoniyatlarni o'z loyihangizda foydalaning.
+
+## Xulosa
+
+Doppi extension v0.0.6 bilan yangi imkoniyatlarga ega bo'ling. Endi dasturlash yanada kuchli va qulayroq bo'ldi, shuningdek, yangi matematik va sintaksis xususiyatlari yordamida yaratgan loyihalaringizni takomillashtirishingiz mumkin.
+
+---
+
+## Snippet & Formatter Examples
+
+```js
+// Sinus funksiyasi
+matematik.sinus(30);
+
+// Kvadrat ildiz
+matematik.ildiz(16);
+
+// Max qiymat
+matematik.max(3, 7, 1);
+```
+
+### **Formatter Example**
+
+```js
+// Matnni formatlash
+let matn = "   Salom, Doppi!   ";
+let formatlanganMatn = matn.uzunlik(); // 18
+matn = matn.almashSatrga(); // "Salom, Doppi!"
+```
+
+---
+
+## Grammar Highlighting
+
+```js
+// Doppi tilida sinf yaratish
+
+klass Hayotjon {
+  constructor(nom) {
+    this.nom = nom;
+  }
+  
+  salomlash() {
+    chiqar("Salom, " + this.nom);
+  }
+}
+
+let hayotjon = yangi Hayotjon("Hayotjon");
+hayotjon.salomlash();
+```
+
+---
+
+## Qo'llab-quvvatlash
+
+Doppi tilining yangi versiyasidan foydalanish bo'yicha qo'llanma va yordam uchun [rasmiy hujjatlarni](#) ko'rib chiqing. Yangiliklar va extensionlar haqida batafsil ma'lumot olish uchun bizning yangilanishlar sahifasiga tashrif buyuring.
+
+
+This document includes:
+
+- **Kod snippet'lari**: Doppi funksiyalarining turli misollari.
+- **Formatter**: Matnni manipulyatsiya qilishni namoyish etuvchi misol.
+- **Grammar highlighting**: Sintaksisni ajratib ko'rsatish misoli.
+- **Intellisense**: Kodni to'ldirishda yordam beradigan vosita bo'lib, quyidagi xususiyatlarni o'z ichiga oladi: A'zolar ro'yxati, Parametrlar haqida ma'lumot, Tezkor ma'lumot, va To'liq so'z.

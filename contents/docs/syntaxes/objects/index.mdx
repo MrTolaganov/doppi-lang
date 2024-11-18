@@ -1,0 +1,212 @@
+---
+title: Object Metodlari va Yaratilishi
+description: Doppi dasturlash tilida object metodlarini yaratish, ularni ishlatish va to'liq ma'lumot qo'shish.
+---
+
+## Object Metodlari
+
+Doppi dasturlash tilida objectlar bilan ishlash uchun quyidagi metodlar mavjud:
+
+1. **ol(key)**: Belirtilgan `key` bo'yicha qiymatni olish. Misol uchun, `object.ol("person")` orqali `person` kalitiga mos qiymatni olishingiz mumkin.
+2. **joyla(key, value)**: Objectga yangi kalit-qiymat juftligini qo'shish yoki mavjud bo'lgan kalitni yangilash. Misol: `object.joyla("age", 25)` orqali yangi `age` kalitini qo'shish.
+3. **mavjudmi(key)**: Objectda ma'lum bir kalit mavjudligini tekshiradi. Misol: `object.mavjudmi("person")` orqali `person` kaliti mavjudmi yo'qligini bilib olish mumkin.
+
+## Object Yaratish
+
+Doppi dasturlash tilida object yaratish va unga ma'lumot qo'shish uchun quyidagi sintaksis ishlatiladi:
+
+```js
+yarat object := {
+    person -> {
+        name -> "hayotjon"
+    }
+};
+
+// Objectni chiqarish
+chiqar(object);
+```
+
+Yuqoridagi kodda `object` nomli object yaratilgan va `person` kalitiga qiymat sifatida `name -> "hayotjon"` qo'shilgan.
+
+## To'liq Ma'lumotni Qo'shish
+
+Objectga turli xil ma'lumotlarni qo'shish mumkin. Masalan, arraylar, funksiyalar yoki boshqa objectlar:
+
+```js
+yarat object := {
+    array -> [1, 2, 3, 4],  // Array qo'shish
+    function -> funksiya(parametrlar) {
+        chiqar(parametrlar);
+    },  // Funksiya qo'shish
+    person -> {
+        name -> "hayotjon",
+        age -> 25  // Person ma'lumotiga yosh qo'shish
+    },
+    "address" -> "Toshkent, O'zbekiston"  // String kaliti
+};
+
+// Objectni chiqarish
+chiqar(object);
+```
+
+Yuqoridagi kodda `object` nomli objectga array, funksiya, string va boshqa ma'lumotlar qo'shilgan. `"address"` kaliti sifatida oddiy string qo'llanilgan.
+
+## Keyni String yoki Oddiy Identifier Sifatida Qo'shish
+
+Doppi tilida key sifatida string (masalan, `"person"`) yoki oddiy identifier (masalan, `person`) ishlatish mumkin. Quyidagi misolda ikkalasi ham ishlatilgan:
+
+```js
+yarat object := {
+    person -> { name -> "hayotjon" },  // Oddiy identifier sifatida
+    "address" -> "Toshkent"  // String sifatida
+};
+
+// Objectni chiqarish
+chiqar(object);
+```
+Yoki obyektga element joylashning boshqa usuli ham mavjud lekin bu koproq aniq keltirilgan turlar uchun ishlaydi.
+```js
+yarat obj={};
+obj.person="Hayotjon";
+```
+
+### Function Call va Array Elementini Olish
+
+Object yaratib bo'lgach, uning metodlarini chaqirish yoki array elementlariga murojaat qilish mumkin:
+
+```js
+yarat object := {
+    array -> [1, 2, 3, 4],  // Array qo'shish
+    function -> funksiya(parametrlar) {
+        chiqar(parametrlar);
+    },  // Funksiya qo'shish
+    person -> {
+        name -> "hayotjon",
+        age -> 25  // Person ma'lumotiga yosh qo'shish
+    },
+    "address" -> "Toshkent, O'zbekiston"  // String kaliti
+};
+
+// Objectni chiqarish
+chiqar(object);
+
+// Functionni chaqirish
+object.function(123);  // "123" ni chiqaradi
+
+// Array elementini olish
+chiqar(object.array[0]);  // 1-ni chiqaradi
+```
+
+### Natija:
+
+```js
+{
+    person -> { name -> "hayotjon", age -> 25 },
+    array -> [1, 2, 3, 4],
+    function -> funksiya(parametrlar) { chiqar(parametrlar); },
+    address -> "Toshkent, O'zbekiston"
+}
+123  // Funksiya chaqiruvining natijasi
+1     // Arrayning birinchi elementi
+```
+
+## Tillardagi Misollar
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="doppi">
+    ```js
+    yarat object := {
+        array -> [1, 2, 3, 4],  // Array qo'shish
+        function -> funksiya(parametrlar) {
+            chiqar(parametrlar);
+        },  // Funksiya qo'shish
+        person -> {
+            name -> "hayotjon",
+            age -> 25  // Person ma'lumotiga yosh qo'shish
+        },
+        "address" -> "Toshkent, O'zbekiston"  // String kaliti
+    };
+
+    // Objectni chiqarish
+    chiqar(object);
+
+    // Functionni chaqirish
+    object.function(123);  // "123" ni chiqaradi
+
+    // Array elementini olish
+    chiqar(object.array[0]);  // 1-ni chiqaradi
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    // Java Object yaratish
+    class Person {
+        String name;
+        int age;
+
+        Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        void printInfo() {
+            System.out.println(this.name + ", " + this.age);
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Person person = new Person("Hayotjon", 25);
+            person.printInfo();  // Hayotjon, 25
+        }
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    // TypeScript Object yaratish
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    const person: Person = {
+        name: "Hayotjon",
+        age: 25
+    };
+
+    console.log(person.name, person.age);  // Hayotjon 25
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Python Object yaratish
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+        def print_info(self):
+            print(self.name, self.age)
+
+    person = Person("Hayotjon", 25)
+    person.print_info()  # Hayotjon 25
+    ```
+  </TabsContent>
+</Tabs>
+
+### Izoh:
+
+- `object` nomli objectda `person`, `array`, `function`, va `"address"` kabi kalitlar mavjud.
+- `object.function(123)` chaqiruvi `123` ni chiqaradi.
+- `object.array[0]` orqali arrayning birinchi elementini olamiz.

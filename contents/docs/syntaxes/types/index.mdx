@@ -1,0 +1,61 @@
+---
+title: Mavjud Turlar
+description: Turlarda mavjud barcha funksiyalar va ularning parametrlarining to'liq tavsifi
+---
+
+## Mavjud Funksiyalar
+
+### **Number (Raqamlar uchun)**
+
+| **Funksiya**         | **Tavsif**                                                                               | **Natija**                            |
+|-----------------------|------------------------------------------------------------------------------------------|----------------------------------------|
+| **almashSatrga()**    | Raqamni satr (string) ko'rinishiga o'zgartiradi.                                         | `123 -> "123"`                         |
+| **raqamniFormatlash(qismlar)** | Raqamni belgilangan formatga muvofiq formatlaydi. Qismlar – kasr qismidagi raqamlar sonini ko'rsatadi. | `1234.56789.raqamniFormatlash(3)` -> `"1,234.568"` |
+
+**Misol**:
+```js
+doim raqam := 1234.56789;
+
+// Oddiy formatlash
+chiqar(raqam.raqamniFormatlash());      // "1,234.56789"
+
+// Qismlar sonini berib formatlash
+chiqar(raqam.raqamniFormatlash(3));    // "1,234.568"
+chiqar(raqam.raqamniFormatlash(2));    // "1,234.57"
+```
+
+---
+
+### **String (Satrlar uchun)**
+
+| **Funksiya**         | **Tavsif**                                                              | **Natija**                    |
+|-----------------------|-------------------------------------------------------------------------|--------------------------------|
+| **uzunlik()**         | Satr uzunligini qaytaradi.                                             | `"Hayotjon" -> 8`             |
+| **kesish(bosh, oxir)**| Satrni berilgan indekslar oralig'ida kesadi.                           | `"Hayotjon".kesish(0, 4)` -> `"Hayo"` |
+| **teskari()**         | Satrni teskari tartibda chiqaradi.                                     | `"Hayotjon" -> `"nojyotyaH"`  |
+| **almashSonga()**     | Satrni son (number) ko'rinishiga o'zgartiradi.                        | `"123" -> 123`                |
+| **massivga()**        | Satrni harflar massiviga aylantiradi.                                  | `"Hayotjon" -> `["H", "a", "y", "o", "t", "j", "o", "n"]` |
+
+**Misol**:
+```js
+doim satr := "Hayotjon";
+chiqar(satr.uzunlik());          // 8
+chiqar(satr.kesish(0, 4));       // "Hayo"
+// kesish uchun ikkinchi variant ham mavjud
+chiqar(satr[0:-3]); 
+// yoki
+chiqar(satr[0:3]); //shaklda yoziladi
+
+chiqar(satr.teskari());          // "nojyotyaH"
+chiqar("123".almashSonga());     // 123
+chiqar(satr.massivga());         // ["H", "a", "y", "o", "t", "j", "o", "n"]
+chiqar(satr[0]); // H 
+
+```
+
+---
+
+### Qo'shimcha Izohlar
+
+1. **`raqamniFormatlash` ishlashi**: Agar kasr qismini ko'rsatmasangiz, raqam butun holda qaytariladi. Kasr qismi kerak bo'lsa, parametrlarda raqamni aniq ko'rsatishingiz lozim.
+2. **`massivga` funksiyasi**: Satrning har bir belgisi massivning alohida elementi sifatida qaytariladi.

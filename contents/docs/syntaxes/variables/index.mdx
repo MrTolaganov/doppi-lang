@@ -1,0 +1,124 @@
+---
+title: O'zgaruvchilar va O'zgarmaslar
+description: Dastur yaratishda foydalaniladigan asosiy tushunchalar.
+---
+
+## Namuna
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="pascal">Pascal</TabsTrigger>
+    <TabsTrigger value="csharp">C#</TabsTrigger>
+  </TabsList>
+  <TabsContent value="doppi">
+    ```js
+    // HelloWorld.doppi
+    yarat a:=12;
+    chiqar(a);
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    // HelloWorld.java
+    public class HelloWorld {
+        public static void main(String[] args) {
+            // O'zgaruvchi aniqlash
+            String salom = "Salom, Dunyo!";
+            
+            // O'zgaruvchini chop etish
+            System.out.println(salom);
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="typescript">
+    ```typescript
+    // helloWorld.ts
+    // O'zgaruvchi aniqlash
+    let salom: string = "Salom, Dunyo!";
+
+    // O'zgaruvchini chop etish
+    console.log(salom);
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    # hello_world.py
+    # O'zgaruvchi aniqlash
+    salom = "Salom, Dunyo!"
+
+    # O'zgaruvchini chop etish
+    print(salom)
+    ```
+  </TabsContent>
+  <TabsContent value="pascal">
+    ```pascal
+    // HelloWorld.pas
+    program HelloWorld;
+    begin
+      // O'zgaruvchi aniqlash
+      var salom: string;
+      salom := 'Salom, Dunyo!';
+      
+      // O'zgaruvchini chop etish
+      writeln(salom);
+    end.
+    ```
+  </TabsContent>
+  <TabsContent value="csharp">
+    ```csharp
+    // HelloWorld.cs
+    using System;
+
+    class HelloWorld {
+        static void Main() {
+            // O'zgaruvchi aniqlash
+            string salom = "Salom, Dunyo!";
+            
+            // O'zgaruvchini chop etish
+            Console.WriteLine(salom);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Doppi haqida eslatmalar
+
+<Note title="O'zgaruvchi va O'zgarmaslar">
+**O'zgaruvchilar:**  
+Dasturda vaqtinchalik ma'lumotlarni saqlash va ulardan foydalanish uchun kerak. `.doppi` tilida o'zgaruvchilar `yarat` kalit so'zi bilan aniqlanadi:  
+```js
+yarat a := 12; // O'zgaruvchi aniqlash
+chiqar(a);     // Natija: 12
+
+a := 20;       // Qiymatni o'zgartirish
+chiqar(a);     // Natija: 20
+```
+
+**O'zgarmaslar:**  
+Dastur davomida o'zgarmas qiymatlarni saqlash uchun ishlatiladi. `.doppi` tilida o'zgarmaslar `doim` kalit so'zi bilan belgilanadi:  
+```js
+doim a := 12;  // O'zgarmas aniqlash
+chiqar(a);     // Natija: 12
+
+a := 20;       // Xato: o'zgarmas qiymatni o'zgartirishga urinish
+```
+
+**Nima uchun kerak:**  
+- O'zgaruvchilar vaqtinchalik qiymatlarni saqlaydi va hisoblashlarni osonlashtiradi.  
+- O'zgarmaslar esa dasturda xatolik ehtimolini kamaytiradi va kodni yanada xavfsiz qiladi.
+</Note>
+
+---
+
+<Note title="Eslatma" type="danger">
+    Sikllar hamda rekursiv funksiyalar ichida o'zgaruvchi yaratish mumkun emas.
+</Note>
+
+Ushbu tuzilma yordamida `.doppi`ning boshqa mashhur tillardan farqli va sodda tomonlarini tushunish osonlashadi.

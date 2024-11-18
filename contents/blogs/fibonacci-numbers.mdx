@@ -1,0 +1,86 @@
+---
+
+title: "Fibonacci Sonlari"
+description: "Doppi dasturlash tili yordamida Fibonacci sonlarini aniqlash"
+date: "11-18-2024"
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/Fibonacci Numbers.png"
+---
+
+## Fibonacci Sonlari Nima?
+
+Fibonacci sonlari — har bir son oldingi ikki sonning yig'indisiga teng bo'lgan bir qator sonlardir. Qator quyidagicha boshlanadi:
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+Fibonacci sonlari qatorini yaratishda, birinchi ikkita son (0 va 1) beriladi, va keyingi har bir son oldingi ikki sonning yig'indisiga teng bo'ladi.
+
+## Fibonacci Sonlarini Hisoblash
+
+### Doppi Dasturlash Tilida Fibonacci Sonlari
+
+Fibonacci sonlarini hisoblash uchun ikki xil usuldan foydalanish mumkin: **iterativ** va **rekursiv**.
+
+#### 1. **Iterativ Usul**
+
+Bu usulda, Fibonacci sonlarini hisoblash uchun sikl (loop) ishlatamiz.
+
+```js
+// Fibonacci sonlarini iterativ usulda hisoblash
+funksiya fibonacci(N){
+    yarat a:=0,b:=1,i:=0,temp:=0;
+    yarat royxat[N];
+    toki(i<N){
+        royxat[i]:=a;
+        temp:=a;
+        a:=b;
+        b:=temp+b;
+        i:=i+1;
+    }; // while sikli
+    royxat;
+};
+chiqar(fibonacci(12));
+```
+
+Ushbu kodda `fibonacci` funksiyasi `N` sonigacha Fibonacci sonlarini hisoblaydi va natijani ro'yxat shaklida qaytaradi. Har bir iteratsiyada yangi Fibonacci soni hisoblanadi va ro'yxatga qo'shiladi.
+
+#### 2. **Rekursiv Usul**
+
+Rekursiv usulda, funksiyaga o'zini-o'zi chaqirish orqali Fibonacci sonlari hisoblanadi.
+
+```js
+// Fibonacci sonlarini rekursiv usulda hisoblash
+funksiya fibonacci(n){
+    agar(n<=1){
+        n;
+    };
+    agar(n<=1){
+        toxtatish;
+    };
+    fibonacci(n-1)+fibonacci(n-2);
+};
+chiqar(fibonacci(11));
+```
+
+Bu yerda `fibonacci` funksiyasi rekursiv tarzda o'zini chaqiradi. Har bir chaqiriqda, funksiyaga `n-1` va `n-2` parametrlar yuborilib, natijada Fibonacci soni qaytariladi.
+
+## Fibonacci Sonlarini Yaratishning Afzalliklari
+
+- **Matematikasini o'rganish**: Fibonacci sonlari matematika va dasturlashni o'rganishda foydali vosita.
+- **Ilmiy va amaliy qo'llanilishi**: Fibonacci sonlari tabiiy olamda va kompyuter ilmida keng qo'llaniladi, masalan, algoritmlarda, tasvirni siqish texnologiyalarida, biologiyada.
+
+## Xulosa
+
+Fibonacci sonlari oddiy va samarali usulda tasvirlanadigan, lekin ko'plab ilmiy va amaliy sohalarda qo'llaniladigan muhim matematik qatorlardir. Doppi dasturlash tili yordamida Fibonacci sonlarini iterativ va rekursiv usullarda hisoblash imkoniyatlarini o'rganish dasturlashni o'rganishda qiziqarli tajriba bo'lishi mumkin.
+
+[Videoni dasrlikni ko'rish](https://t.me/AnonymousDev_group/479) 
+<br/>
+Happy coding!
+
+🚀✨
+
+---

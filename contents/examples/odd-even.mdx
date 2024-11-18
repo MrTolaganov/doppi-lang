@@ -1,0 +1,79 @@
+---
+title: "Odd va Juft Sonlarni Ajratish"
+description: "Doppi dasturlash tili yordamida oddiy va juft sonlarni ajratish masalasini hal qilish"
+date: 11-18-2024
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/122685933?v=4"
+    handle: AnonymousDevelope
+    handleUrl: "https://github.com/AnonymousDevelope"
+    username: AnonymousDeveloper
+cover: "/images/blogs/Odd-Even.png"
+---
+
+## Odd va Juft Sonlarni Ajratish
+
+### Kirish
+
+Dasturlashda sonlarni ajratish vazifasi tez-tez uchraydi. Bu masalada biz berilgan ro'yxatdagi juft va toq sonlarni ajratib, ikkita alohida ro'yxatga joylashtiramiz. Doppi dasturlash tili yordamida bu masalani qanday yechish mumkinligini ko'rib chiqamiz.
+
+### Masala Tavsifi
+
+Berilgan ro'yxatdagi sonlarni tekshirib, juft sonlarni bir ro'yxatga, toq sonlarni esa boshqa ro'yxatga ajratamiz. 
+
+### Doppi Kode
+
+```js
+// Odd va Juft Sonlarni Ajratish
+yarat n:=kirit("nechta element:", "number");
+yarat royxat[n], i := 0;
+// o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+takrorla (i:=0, i<n, i:=i+1) {
+    royxat[i] := tasodif(12, 40);
+};
+chiqar(royxat);
+
+yarat juft[n], toq[n], jufti := 0, toqi := 0;
+i := 0;
+// o'zgaruvchi avvaldan yaratilgan bo'lishi shart
+takrorla (i:=0, i<n, i:=i+1) {
+    agar(royxat[i] % 2 == 0) {
+        juft[jufti] := royxat[i];
+        jufti := jufti + 1;
+    } aks {
+        toq[toqi] := royxat[i];
+        toqi := toqi + 1;
+    };
+};
+chiqar("toqlari:", toq, "\njuftlari:", juft);
+```
+
+### Dastur Tavsifi
+
+1. **Sonlar ro'yxatini yaratish**: Dastlab, foydalanuvchidan necha element kiritish kerakligini so'raymiz va tasodifiy sonlar bilan ro'yxatni to'ldiramiz.
+2. **Juft va toq sonlarni ajratish**: Ro'yxatni tekshirib, har bir sonni juft yoki toq ekanligini aniqlaymiz:
+    - **Juft sonlar**: Agar son 2 ga bo'linadigan bo'lsa (`royxat[i] % 2 == 0`), u juft son deb qabul qilinadi.
+    - **Toq sonlar**: Agar son 2 ga bo'linmaydigan bo'lsa, u toq son deb hisoblanadi.
+3. **Natijalarni chiqarish**: Dastur ajratilgan ro'yxatlarni (`toq` va `juft`) foydalanuvchiga chiqaradi.
+
+### Misol
+
+Agar foydalanuvchi 7 elementdan iborat ro'yxat kiritgan bo'lsa, va tasodifiy sonlar ro'yxati quyidagi ko'rinishga ega bo'lsa:
+
+```
+royxat = [12, 15, 18, 23, 30, 35, 40]
+```
+
+Dastur natijada quyidagicha chiqadi:
+
+```
+toqlari: [15, 23, 35]
+juftlari: [12, 18, 30, 40]
+```
+
+### Xulosa
+
+Bu dastur yordamida biz berilgan sonlar ro'yxatidan juft va toq sonlarni ajratib, alohida ro'yxatlar yaratdik. Doppi dasturlash tili yordamida bu masala samarali va tushunarli tarzda hal qilindi. Bu usulni boshqa turdagi sonlar bilan ishlashda ham qo'llash mumkin.
+
+---
+
+Maqolada Doppi dasturlash tili yordamida sonlarni ajratish vazifasini qanday hal qilishni ko'rdik. Bu, dasturchilarga sodda va samarali dasturlar yozishga yordam beradi.
